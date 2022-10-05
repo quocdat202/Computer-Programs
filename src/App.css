@@ -14,6 +14,7 @@
   height: 621px;
 }
 .content {
+  box-shadow: 5px 5px rgb(44, 44, 44);
   background-color: black;
   width: 30%;
   color: white;
