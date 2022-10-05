@@ -1,21 +1,25 @@
 import React, { useState } from 'react'
 import '../App.css';
+import sou from '../Audio/sou.mp3';
 export default function Calculator() {
     const [cal, setCal] = useState("");
     const [result, setResult] = useState("");
 
     const updateCal = (e) => {
-        setCal(cal.concat(e.target.name));
+        setCal(cal.concat(e.target.name).toLocaleString());
+        document.getElementById('play').play();
     }
 
     const clear = () => {
         setCal("");
         setResult("");
+        document.getElementById('play').play();
     }
 
     const results = () => {
+        document.getElementById('play').play();
         try {
-            setResult(eval(cal).toString());
+            setResult(new Intl.NumberFormat({ style: 'currency', currency: 'VND' }).format(eval(cal).toString()));
         }
         catch {
             setResult("Error");
@@ -23,12 +27,15 @@ export default function Calculator() {
     }
 
     return (
-        <div className="container">
-            <div className="content">
+        <div id="container-full" className="container">
+            <div id="content" className="content">
+                <audio id="play" type="audio/mp3" src={sou}></audio>
                 <div className="title-body">Calculator</div>
-                <div className="show-input">{cal || 0}</div>
-                <div className=""><span className="text-orange-500">{result || ''}</span></div>
-
+                <div className="content-top">
+                    <div className="show-input">{cal || 0}</div>
+                    <div className="show-result"><p>{result || ' '}</p>
+                    </div>
+                </div>
 
                 <div className="item-content">
                     <div className="item-button">
@@ -42,6 +49,7 @@ export default function Calculator() {
                             (
                         </button>
                     </div>
+
 
                     <div className="item-button">
                         <button className="" name=")" onClick={updateCal}>
@@ -138,7 +146,7 @@ export default function Calculator() {
                 <div className="item-content">
                     <div className="item-button">
                         <button className="" onClick={clear}>
-                            AC
+                            <span className="">AC</span>
                         </button>
                     </div>
 
