@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Computer-Programs/static/css/main.5a8a769c.css",
+    "main.js": "/Computer-Programs/static/js/main.0a8687b6.js",
+    "static/media/bg_app.png": "/Computer-Programs/static/media/bg_app.ac95f77f8e5f483e4d5c.png",
+    "static/media/sou.mp3": "/Computer-Programs/static/media/sou.4dcf5a76615a202864fa.mp3",
+    "index.html": "/Computer-Programs/index.html",
+    "main.5a8a769c.css.map": "/Computer-Programs/static/css/main.5a8a769c.css.map",
+    "main.0a8687b6.js.map": "/Computer-Programs/static/js/main.0a8687b6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5a8a769c.css",
+    "static/js/main.0a8687b6.js"
+  ]
+}
